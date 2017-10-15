@@ -8,31 +8,32 @@ import android.util.AttributeSet;
 import android.view.View;
 
 public class Practice07SetUnderlineTextView extends View {
-    Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
-    String text = "Hello HenCoder";
+  Paint  paint = new Paint(Paint.ANTI_ALIAS_FLAG);
+  String text  = "Hello HenCoder";
 
-    public Practice07SetUnderlineTextView(Context context) {
-        super(context);
-    }
+  public Practice07SetUnderlineTextView(Context context) {
+    super(context);
+  }
 
-    public Practice07SetUnderlineTextView(Context context, @Nullable AttributeSet attrs) {
-        super(context, attrs);
-    }
+  public Practice07SetUnderlineTextView(Context context, @Nullable AttributeSet attrs) {
+    super(context, attrs);
+  }
 
-    public Practice07SetUnderlineTextView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
-        super(context, attrs, defStyleAttr);
-    }
+  public Practice07SetUnderlineTextView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    super(context, attrs, defStyleAttr);
+  }
 
-    {
-        paint.setTextSize(60);
+  {
+    paint.setTextSize(60);
 
-        // 使用 Paint.setUnderlineText() 来设置下划线
-    }
+    // 使用 Paint.setUnderlineText() 来设置下划线
+  }
 
-    @Override
-    protected void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
+  @Override protected void onDraw(Canvas canvas) {
+    super.onDraw(canvas);
 
-        canvas.drawText(text, 50, 100, paint);
-    }
+    canvas.drawText(text, 50, 100, paint);
+    paint.setUnderlineText(true);
+    canvas.drawText(text, 50, 100 + paint.getFontSpacing(), paint);
+  }
 }
